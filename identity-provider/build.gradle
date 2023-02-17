@@ -1,0 +1,22 @@
+dependencies {
+    //api project(":secrets-manager-api")
+
+    implementation "com.amazonaws:aws-java-sdk:${awsSDKVersion}"
+    implementation "com.amazonaws:aws-java-sdk-core:${awsSDKVersion}"
+    implementation "com.amazonaws:aws-java-sdk-cognitoidp:${awsSDKVersion}"
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "software.amazon.awssdk:bom:${awsBomVersion}"
+    }
+}
+
+ext {
+    artifactId = 'aws-cognito-idp'
+    artifactDescription = 'Cognito Identity Provider'
+}
